@@ -1,0 +1,148 @@
+define([], function(){
+let data = {
+    "clusters": [
+        {
+            "id": 0,
+            "clustername": "Cluster 0",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 }
+            ],
+            "perqavg": {
+                "6-6": { "color": "yellow", "prc": 67, "qname": "Question name 1" },
+                "2-2": { "color": "red", "prc": 18, "qname": "Question name 2" },
+                "3-3": { "color": "red", "prc": 11, "qname": "Question name 3" },
+                "5-5": { "color": "red", "prc": 26, "qname": "Question name 4" },
+                "4-4": { "color": "yellow", "prc": 74, "qname": "Question name 5" },
+                "1-1": { "color": "red", "prc": 49, "qname": "Question name 6" },
+                "7-7": { "color": "red", "prc": 21, "qname": "Question name 7" },
+                "8-8": { "color": "red", "prc": 6, "qname": "Question name 8" }
+            }
+        },
+        {
+            "id": 1,
+            "clustername": "Cluster 1",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 },
+                { "id": "UID5", "fullname": "User5  LastName5", "garde": 10 }
+            ],
+            "perqavg": {
+                "1-1": { "color": "green", "prc": 87, "qname": "Question name 1" },
+                "2-2": { "color": "yellow", "prc": 76, "qname": "Question name 2" },
+                "3-3": { "color": "red", "prc": 26, "qname": "Question name 3" },
+                "4-4": { "color": "yellow", "prc": 71, "qname": "Question name 4" },
+                "5-5": { "color": "red", "prc": 12, "qname": "Question name 5" },
+                "6-6": { "color": "red", "prc": 6, "qname": "Question name 6" },
+                "7-7": { "color": "red", "prc": 30, "qname": "Question name 7" },
+                "8-8": { "color": "red", "prc": 38, "qname": "Question name 8" }
+            }
+        },
+        {
+            "id": 2,
+            "clustername": "Cluster 2",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 },
+                { "id": "UID5", "fullname": "User5  LastName5", "garde": 10 }
+            ],
+            "perqavg": {
+                "1-1": { "color": "red", "prc": 26, "qname": "Question name 1" },
+                "2-2": { "color": "red", "prc": 21, "qname": "Question name 2" },
+                "3-3": { "color": "red", "prc": 32, "qname": "Question name 3" },
+                "4-4": { "color": "red", "prc": 6, "qname": "Question name 4" },
+                "5-5": { "color": "red", "prc": 1, "qname": "Question name 5" },
+                "6-6": { "color": "yellow", "prc": 66, "qname": "Question name 6" },
+                "7-7": { "color": "red", "prc": 0, "qname": "Question name 7" },
+                "8-8": { "color": "yellow", "prc": 59, "qname": "Question name 8" }
+            }
+        },
+        {
+            "id": 3,
+            "clustername": "Cluster 3",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 },
+                { "id": "UID5", "fullname": "User5  LastName5", "garde": 10 },
+                { "id": "UID6", "fullname": "User6  LastName6", "garde": 10 },
+                { "id": "UID7", "fullname": "User7  LastName7", "garde": 10 }
+            ],
+            "perqavg": {
+                "1-1": { "color": "green", "prc": 89, "qname": "Question name 1" },
+                "2-2": { "color": "red", "prc": 14, "qname": "Question name 2" },
+                "3-3": { "color": "yellow", "prc": 59, "qname": "Question name 3" },
+                "4-4": { "color": "red", "prc": 46, "qname": "Question name 4" },
+                "5-5": { "color": "yellow", "prc": 61, "qname": "Question name 5" },
+                "6-6": { "color": "yellow", "prc": 57, "qname": "Question name 6" },
+                "7-7": { "color": "red", "prc": 39, "qname": "Question name 7" },
+                "8-8": { "color": "red", "prc": 33, "qname": "Question name 8" }
+            }
+        },
+        {
+            "id": 4,
+            "clustername": "Cluster 4",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 },
+                { "id": "UID5", "fullname": "User5  LastName5", "garde": 10 },
+                { "id": "UID6", "fullname": "User6  LastName6", "garde": 10 }
+            ],
+            "perqavg": {
+                "1-1": { "color": "red", "prc": 29, "qname": "Question name 1" },
+                "2-2": { "color": "green", "prc": 85, "qname": "Question name 2" },
+                "3-3": { "color": "red", "prc": 32, "qname": "Question name 3" },
+                "4-4": { "color": "yellow", "prc": 53, "qname": "Question name 4" },
+                "5-5": { "color": "red", "prc": 33, "qname": "Question name 5" },
+                "6-6": { "color": "yellow", "prc": 54, "qname": "Question name 6" },
+                "7-7": { "color": "red", "prc": 32, "qname": "Question name 7" },
+                "8-8": { "color": "green", "prc": 89, "qname": "Question name 8" }
+            }
+        },
+        {
+            "id": 5,
+            "clustername": "Cluster 5",
+            "info": "Average grade 76%",
+            "text": "Average grade 76%",
+            "users": [
+                { "id": "UID1", "fullname": "User1  LastName1", "garde": 10 },
+                { "id": "UID2", "fullname": "User2  LastName2", "garde": 10 },
+                { "id": "UID3", "fullname": "User3  LastName3", "garde": 10 },
+                { "id": "UID4", "fullname": "User4  LastName4", "garde": 10 },
+                { "id": "UID5", "fullname": "User5  LastName5", "garde": 10 }
+            ],
+            "perqavg": {
+                "1-1": { "color": "yellow", "prc": 55, "qname": "Question name 1" },
+                "2-2": { "color": "red", "prc": 8, "qname": "Question name 2" },
+                "3-3": { "color": "red", "prc": 16, "qname": "Question name 3" },
+                "4-4": { "color": "red", "prc": 28, "qname": "Question name 4" },
+                "5-5": { "color": "green", "prc": 92, "qname": "Question name 5" },
+                "6-6": { "color": "green", "prc": 95, "qname": "Question name 6" },
+                "7-7": { "color": "yellow", "prc": 76, "qname": "Question name 7" },
+                "8-8": { "color": "red", "prc": 42, "qname": "Question name 8" }
+            }
+        }
+    ],
+    "total": { "info": "Average grade 76%" }
+    }
+    return data;
+});

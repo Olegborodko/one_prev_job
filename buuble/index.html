@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <link href="accets/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <style>
+    div.svgСharts-tooltip-select{
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      background: #514571;
+      border: 1px solid #514571;
+      color: #ffffff;
+      border-radius: 4px;
+      text-align: center;
+      z-index: 100;
+      visibility: hidden;
+      text-align: left;
+    }
+
+    div.svgСharts-tooltip-select div{
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    div.svgСharts-tooltip-select div:hover{
+      background: #ffffff;
+      color: #514571;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="require.js"></script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="popup-local-diagnostic">
+  <div class="question-list-parent">
+    <div class="question-list-block">
+      <div class="question-list-button">
+        <div class="question-button-body">
+          <div class="question-button-title">test-test</div>
+          <!-- <img class="img-ico" src="icons/gr.jpg" /> -->
+          <!-- <i class="fa fa-analytics"></i> -->
+          <i class="far fa-chart-bar img-ico"></i>
+        </div>
+        <div class="q-lright-icon"><i class="fa fa-angle-left"></i></div>
+      </div>
+      <div class="question-list">
+        <div class="question-list-title">
+          title
+        </div>
+        <table class="question-table">
+        </table>
+        <div class="question-description">
+          <div class="question-desc-block">
+            <div>text</div> 
+            <div class="label red"></div>
+          </div>
+          <div class="question-desc-block">
+            <div>text</div> 
+            <div class="label yellow"></div>
+          </div>
+          <div class="question-desc-block">
+            <div>text</div> 
+            <div class="label green"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svgСharts"></div>
+
+  <script>
+    let Template = `
+    <tr>
+      {{#clusters}}
+      <td>
+        {{.}}
+      </td>
+      {{/clusters}}
+      <td>
+        title
+      </td>
+    </tr>
+    {{#rows}}
+    <tr>
+      {{#value}}
+      <td class="{{color}}">
+        {{prc}}
+      </td>
+      {{/value}}
+      <td data-value='{{qname}}'>
+        {{question}}
+      </td>
+    </tr>
+    {{/rows}}
+    `;
+
+    require(['local_diagnostic/buuble-animation', 'local_diagnostic/data','local_diagnostic/question-list'], function (buubleAnimation, testData, questionList) {
+      $( document ).ready(function() {
+          buubleAnimation('.svgСharts', testData, '.popup-local-diagnostic');
+
+          //questionList('.question-table', testData, Template);
+        //=================================
+
+        $('.question-list-button').click(function() {
+            // $('.question-list').slideToggle();
+            $('.question-list').animate({width: 'toggle'});
+            // $('.q-lright-icon i').css({'transform': 'rotate(0deg)'});
+            $('.q-lright-icon i').toggleClass( "rotate-0" );
+            // $('.q-lright-icon i').css({'display': 'none'});
+        });
+
+      });
+      })
+  </script>
+</body>
+</html>

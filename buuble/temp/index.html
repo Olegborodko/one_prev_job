@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <style>
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="lib.js"></script>
+
+  <div class="svgСharts"></div>
+
+  <script>
+    $( document ).ready(function() {
+      function addRandomIconAndBd(obj){
+        function getRandomNum(fromNum, toNum){
+          return Math.floor(Math.random() * (toNum + 1)) + fromNum
+        }
+
+        for (var i = 0; i < obj.users.length; ++i) {
+          obj.users[i].icon = getRandomNum(0, 2);
+        }
+
+        let num = getRandomNum(0, 2);
+        if (num === 0){
+          obj.background = "white";
+        }
+        if (num === 1){
+          obj.background = "blue";
+        }
+        if (num === 2){
+          obj.background = "green";
+        }
+
+        return obj;
+      }
+
+      let url = "http://m39.petel.learnapp.io/clusters.php";
+      $.getJSON(url, function() {}).done(function(data) {
+        if (!data) {
+          console.log("error");
+          return;
+        }
+        
+        for (var i = 0; i < data.length; ++i) {
+          if (data[i].users.length > 0){
+            // temp
+            addRandomIconAndBd(data[i])
+          }
+        }
+
+        addSVG(".svgСharts", data);
+
+        // $( function() {
+        //   $(".svgСharts svg g image").draggable()
+        //   .bind('mousedown', function(event, ui){
+        //     $(event.target.parentElement).append( event.target );
+        //   })
+        //   .bind('drag', function(event, ui){
+        //     event.target.setAttribute('x', ui.position.left);
+        //     event.target.setAttribute('y', ui.position.top);
+        //   });
+        // });
+      })
+      .fail(function() {
+        console.log( "error" );
+      })
+      // .always(function() {
+      //   console.log( "complete" );
+      // });
+      // addCircle(".svgСharts", data1);
+  });
+  </script>
+</body>
+</html>

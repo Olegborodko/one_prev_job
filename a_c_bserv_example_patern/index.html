@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title></title>
+</head>
+
+<div id="root_absolute_q">
+  <input class="js-input">
+
+  <p class="js-p1">
+  </p>
+
+  <p class="js-p2">
+  </p>
+</div>
+
+<body>
+  <script>
+    class Observable {
+      constructor(state) {
+        this.state = state;
+        this.observers = [];
+      }
+
+      getState(){
+        return this.state;
+      }
+
+      addClass(classEl) {
+        this.observers.push(classEl)
+      }
+
+      removeClass(classEl) {
+        this.observers = this.observers.filter(subscriber => subscriber !== classEl);
+      }
+
+      changeDom(state) {
+        this.state = state;
+        this.observers.forEach(function (classEl) {
+          classEl.change(state);
+        });
+        console.log('state =>',state);
+      }
+    }
+
+    class Circle {
+      constructor(ObservItem) {
+        this.domEl = document.querySelector('.js-p1');
+        this.state = ObservItem.getState();
+        this.draw();
+      }
+
+      change(state) {
+        this.state = state;
+        this.draw();
+      }
+
+      draw() {
+        this.domEl.textContent = this.state.value;
+      }
+    }
+
+    class InputClass {
+      constructor(ObservItem) {
+        this.input = document.querySelector('.js-input');
+        this.ObservItem = ObservItem;
+        this.state = ObservItem.getState();
+        this.addEvent();
+      }
+
+      addEvent() {
+        let self = this;
+        this.input.addEventListener('keyup', function (e) {
+          this.state = {...this.state, value: '456'}
+          self.ObservItem.changeDom(this.state);
+        });
+      }
+    }
+
+    let state = {
+      value: '1'
+    };
+    
+    let ObservItem = new Observable(state);
+
+    let circleItem1 = new Circle(ObservItem);
+    let InputItem1 = new InputClass(ObservItem);
+
+    ObservItem.addClass(circleItem1);
+
+  </script>
+</body>
+
+</html>

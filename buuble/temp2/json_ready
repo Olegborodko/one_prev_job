@@ -1,0 +1,32 @@
+[
+  //tr
+  {
+    idQuestion,
+    qname
+    [
+      //td (все td должны быть в точной последователости с кластерами)
+      {
+        clasterId,
+        clasterName,
+        "color": "yellow",
+        "prc": 67,
+      }
+    ]
+  }
+]
+
+
+
+[
+  {
+  question: 1,
+  value: [
+    {
+
+    },
+    {
+
+    }
+  ]
+  }
+]
